@@ -52,8 +52,8 @@ class Usuario
 	#Devuelve anadido si lo inserto en la lista de usuarios y noanadido si ya estaba en la lista
 	def ingresarUsuario
 		if verificaUsuario
-			objeto= Usuario.new(@nombre,@pass) # se crea el objeto para almacenarlo dentro de la lista
-			$listaUsuarios<<objeto
+			usuario= Usuario.new(@nombre,@pass) # se crea el objeto para almacenarlo dentro de la lista
+			$listaUsuarios<<usuario
 			return "anadido"
 		
 		else 

@@ -1,6 +1,7 @@
 require 'sinatra'
 require './usuarios.rb'
 require './preguntas.rb'
+require './respuestas.rb'
 
 get '/' do
 	"Bienvenido a la aplicacion de Vuelvase loco entreprise!"
@@ -42,3 +43,16 @@ get '/buscarTag/:tag' do
 	""+imprimir+""
 end
 
+#caso para guardar una respuesta
+get '/respuesta/:usuario/:id/:respuesta' do
+	actual = Respuesta.new(params[:usuario],params[:id],params[:respuesta])
+	imprimir = actual.guardarRespuesta
+	""+imprimir+""
+end
+
+#caso para buscar respuestas por pregunta
+get '/mostrarRespuestas/:id' do
+	actual = Respuesta.new("",params[:id],"")
+	imprimir = actual.buscarRespuestasPregunta
+	""+imprimir+""
+end

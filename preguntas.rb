@@ -19,6 +19,7 @@ class Preguntas
 		return @pregunta
 	end
 
+	#obtener el id de la pregunta
 	def getId
 		return @id
 	end
@@ -27,12 +28,6 @@ class Preguntas
 	def getTag
 		return @tag
 	end
-
-	#Metodo para crear la lista de tags 
-	def crearListaTag
-		listatag=[]#variable para almacenar
-		return @tag=@tag.split(",")
-	end 
 
 	#metodo para crear la cadena de texto con todos los tags
 	def crearStringTag
